@@ -27,13 +27,12 @@
         }
 
         body {
-            /* Background Image updated to sun.png and made clear */
+            /* Background Image adjusted to be less zoomed in and wider */
             background-image: url('sun.png');
-            background-size: cover;
+            background-size: 100% auto; /* Wider and less close-up */
             background-attachment: fixed;
-            background-position: center center;
-            background-repeat: no-repeat;
-            /* Removed blend-mode and high opacity overlay to keep the image clear */
+            background-position: top center;
+            background-repeat: repeat-y;
             background-color: #fdfcfb;
             
             color: var(--dark-text);
@@ -114,7 +113,7 @@
         /* Credits Section */
         .credits-container {
             text-align: center;
-            background: rgba(255, 255, 255, 0.7); /* Slightly more opaque for clarity */
+            background: rgba(255, 255, 255, 0.7);
             padding: 40px 20px;
             border-radius: 40px;
             margin-bottom: 60px;
