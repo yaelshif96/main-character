@@ -19,6 +19,7 @@
             --dark-text: #2d3436;
             --polaroid-white: #ffffff;
             --glass-bg: rgba(255, 255, 255, 0.85);
+            --clip-color: #7f8c8d;
         }
 
         * {
@@ -28,8 +29,8 @@
         }
 
         body {
-            /* Background Image set to pink.png */
-            background-image: url('pink.png');
+            /* Background Image set to tint.png */
+            background-image: url('tint.png');
             background-size: cover;
             background-attachment: fixed;
             background-position: center;
@@ -49,7 +50,7 @@
         }
 
         #main-content {
-            max-width: 650px; /* Slimmer container for better mobile reading */
+            max-width: 650px; 
             margin: 0 auto;
             padding: 20px 15px;
             animation: fadeIn 1s ease;
@@ -62,7 +63,7 @@
 
         header {
             display: flex;
-            flex-direction: row-reverse; /* Neta image on the left, Title on the right */
+            flex-direction: row-reverse; 
             align-items: center;
             justify-content: center;
             gap: 15px;
@@ -105,7 +106,7 @@
         .section-title {
             font-size: clamp(1.8rem, 7vw, 2.4rem);
             margin-bottom: 25px;
-            color: var(--peach); /* Changed to palette color */
+            color: var(--peach); 
             text-align: center;
         }
 
@@ -227,7 +228,7 @@
             background: var(--glass-bg);
             padding: 20px;
             border-radius: 25px;
-            margin-bottom: 30px;
+            margin-bottom: 40px;
             text-align: center;
             border: 2px dashed var(--peach);
         }
@@ -245,8 +246,8 @@
         .inspiration-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            gap: 15px;
-            padding: 10px 0;
+            gap: 25px;
+            padding: 20px 0;
         }
 
         .polaroid {
@@ -256,6 +257,36 @@
             cursor: pointer;
             transition: transform 0.3s ease;
             position: relative;
+            margin-top: 15px; /* Space for the clip */
+        }
+
+        /* The Cool Clip Effect */
+        .polaroid::before {
+            content: "";
+            position: absolute;
+            top: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 35px;
+            height: 18px;
+            background: linear-gradient(to bottom, #bdc3c7, #7f8c8d);
+            border-radius: 4px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+            z-index: 5;
+        }
+        
+        /* Small detail inside the clip */
+        .polaroid::after {
+            content: "";
+            position: absolute;
+            top: -6px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 20px;
+            height: 2px;
+            background: rgba(0,0,0,0.1);
+            z-index: 6;
+            border-radius: 1px;
         }
 
         .polaroid-img-placeholder {
@@ -284,6 +315,7 @@
             right: 2px;
             display: flex;
             gap: 4px;
+            z-index: 10;
         }
 
         .mini-btn {
@@ -558,8 +590,10 @@
             const grid = document.getElementById('memoryGrid');
             grid.innerHTML = "";
             memories.forEach((mem, index) => {
+                const rot = (index % 2 === 0 ? -4 : 4) + (Math.random() * 2 - 1);
                 const div = document.createElement('div');
                 div.className = 'polaroid';
+                div.style.transform = `rotate(${rot}deg)`;
                 div.innerHTML = `
                     <div class="polaroid-controls">
                         <button class="mini-btn" onclick="event.stopPropagation(); openEditMemoryModal(${index})">✍️</button>
