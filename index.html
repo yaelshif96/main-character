@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>העולם של נטע - 2026</title>
-    <!-- Favicon -->
-    <link rel="icon" type="image/png" href="match.png">
+    <!-- Favicon updated to manifesting.png -->
+    <link rel="icon" type="image/png" href="manifesting.png">
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -27,14 +27,14 @@
         }
 
         body {
-            /* Background Image Update to cactus.png */
+            /* Background Image optimized to be clearly visible */
             background-image: url('cactus.png');
             background-size: cover;
             background-attachment: fixed;
-            background-position: center;
+            background-position: center center;
             background-repeat: no-repeat;
-            background-color: #e8e8e4;
-            background-blend-mode: overlay;
+            background-color: rgba(232, 232, 228, 0.4); /* Reduced opacity for clarity */
+            background-blend-mode: lighten;
             
             color: var(--dark-text);
             font-family: 'Gveret Levin', cursive;
@@ -44,12 +44,12 @@
             -webkit-tap-highlight-color: transparent;
         }
 
-        h1, h2, h3, p, span, div, input, button {
+        h1, h2, h3, p, span, div, input, button, textarea {
             font-family: 'Gveret Levin', cursive;
         }
 
         #main-content {
-            max-width: 800px;
+            max-width: 850px;
             margin: 20px auto;
             padding: 40px 20px;
             animation: fadeIn 1.5s ease;
@@ -72,37 +72,39 @@
         }
 
         .neta-img {
-            width: 100px;
-            height: 100px;
+            width: 120px;
+            height: 120px;
             border-radius: 50%;
             object-fit: cover;
-            border: 3px solid var(--peach);
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            border: 4px solid var(--peach);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.15);
         }
 
         header h1 {
-            font-size: clamp(2rem, 8vw, 4rem);
+            font-size: clamp(2.5rem, 10vw, 4.5rem);
             color: var(--dark-text);
             margin: 0;
+            text-shadow: 1px 1px 2px rgba(255,255,255,0.8);
         }
 
         .pillars {
-            font-size: clamp(1.2rem, 4vw, 1.8rem);
+            font-size: clamp(1.4rem, 5vw, 2rem);
             color: var(--peach);
             display: flex;
             justify-content: center;
             flex-wrap: wrap;
-            gap: 15px;
+            gap: 20px;
             margin-bottom: 40px;
             width: 100%;
+            font-weight: bold;
         }
 
         section {
-            margin-bottom: 60px;
+            margin-bottom: 80px;
         }
 
         .section-title {
-            font-size: clamp(1.8rem, 6vw, 2.2rem);
+            font-size: clamp(2rem, 7vw, 2.8rem);
             margin-bottom: 30px;
             color: var(--dark-text);
             text-align: center;
@@ -112,12 +114,13 @@
         /* Credits Section */
         .credits-container {
             text-align: center;
-            background: rgba(255, 255, 255, 0.45);
+            background: rgba(255, 255, 255, 0.6);
             padding: 40px 20px;
             border-radius: 40px;
             margin-bottom: 60px;
             backdrop-filter: blur(10px);
             -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.4);
         }
 
         .credit-row {
@@ -125,26 +128,27 @@
         }
 
         .credit-role {
-            font-size: 0.9rem;
-            opacity: 0.6;
+            font-size: 1rem;
+            opacity: 0.7;
             margin-bottom: 2px;
         }
 
         .credit-name {
-            font-size: 1.6rem;
+            font-size: 1.8rem;
             color: var(--dark-text);
         }
 
         /* Checklist */
         .quest-section {
-            background: rgba(255, 255, 255, 0.25);
-            padding: 25px;
-            border-radius: 30px;
+            background: rgba(255, 255, 255, 0.4);
+            padding: 30px;
+            border-radius: 35px;
+            backdrop-filter: blur(5px);
         }
 
         .quest-input-wrap {
             display: flex;
-            border-bottom: 2px solid var(--peach);
+            border-bottom: 3px solid var(--peach);
             margin-bottom: 25px;
         }
 
@@ -153,7 +157,7 @@
             background: transparent;
             border: none;
             padding: 12px 0;
-            font-size: 1.4rem;
+            font-size: 1.6rem;
             outline: none;
             color: var(--dark-text);
         }
@@ -163,8 +167,8 @@
             border: none;
             color: var(--peach);
             cursor: pointer;
-            padding: 0 10px;
-            font-size: 1.4rem;
+            padding: 0 15px;
+            font-size: 1.6rem;
             font-weight: bold;
         }
 
@@ -177,15 +181,15 @@
             align-items: center;
             justify-content: space-between;
             padding: 15px 0;
-            font-size: 1.3rem;
+            font-size: 1.5rem;
             transition: 0.2s;
-            border-bottom: 1px solid rgba(0,0,0,0.03);
+            border-bottom: 1px solid rgba(0,0,0,0.05);
         }
 
         .quest-content {
             display: flex;
             align-items: center;
-            gap: 12px;
+            gap: 15px;
             flex: 1;
             cursor: pointer;
         }
@@ -196,8 +200,8 @@
         }
 
         .dot-check {
-            width: 20px;
-            height: 20px;
+            width: 22px;
+            height: 22px;
             border: 2px solid var(--dark-text);
             border-radius: 50%;
             flex-shrink: 0;
@@ -210,22 +214,8 @@
 
         .quest-actions {
             display: flex;
-            gap: 12px;
-            margin-right: 10px;
-        }
-
-        .action-btn {
-            background: none;
-            border: none;
-            cursor: pointer;
-            font-size: 1.3rem;
-            padding: 5px;
-            opacity: 0.7;
-            transition: transform 0.2s;
-        }
-
-        .action-btn:active {
-            transform: scale(0.9);
+            gap: 15px;
+            margin-right: 15px;
         }
 
         /* Inspiration Corner */
@@ -233,20 +223,21 @@
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
-            gap: 20px;
+            gap: 25px;
             padding: 20px 0;
         }
 
         .polaroid {
             background: var(--polaroid-white);
-            padding: 10px 10px 30px 10px;
-            box-shadow: 0 8px 15px rgba(0,0,0,0.08);
-            width: 140px;
+            padding: 12px 12px 35px 12px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            width: 170px;
             cursor: pointer;
             transition: all 0.3s ease;
+            position: relative;
         }
 
-        .polaroid:hover, .polaroid:active {
+        .polaroid:hover {
             transform: scale(1.05) rotate(0deg) !important;
             z-index: 10;
         }
@@ -255,28 +246,78 @@
             width: 100%;
             aspect-ratio: 1/1;
             background-color: var(--sage);
-            margin-bottom: 10px;
+            margin-bottom: 12px;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.6rem;
+            font-size: 2.5rem;
         }
 
         .polaroid-caption {
             text-align: center;
-            font-size: 1rem;
+            font-size: 1.2rem;
             color: #333;
+            word-wrap: break-word;
         }
 
+        .polaroid-controls {
+            position: absolute;
+            top: 5px;
+            right: 5px;
+            display: flex;
+            gap: 5px;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .polaroid:hover .polaroid-controls {
+            opacity: 1;
+        }
+
+        .mini-btn {
+            background: rgba(255,255,255,0.8);
+            border: none;
+            border-radius: 50%;
+            width: 24px;
+            height: 24px;
+            font-size: 0.8rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        /* Add Memory Section */
+        .add-memory-form {
+            background: rgba(255,255,255,0.4);
+            padding: 20px;
+            border-radius: 20px;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .add-memory-form input, .add-memory-form textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 10px;
+            border: 2px solid var(--peach);
+            background: white;
+            outline: none;
+        }
+
+        /* Wake up message */
         .wake-up-msg {
             text-align: center;
-            font-size: clamp(1.4rem, 5vw, 1.8rem);
+            font-size: clamp(1.6rem, 6vw, 2.2rem);
             color: var(--dark-text);
-            margin: 50px auto;
-            padding: 25px;
-            background: rgba(255, 181, 167, 0.15);
-            border-radius: 20px;
+            margin: 60px auto;
+            padding: 30px;
+            background: rgba(255, 181, 167, 0.3);
+            border-radius: 25px;
             max-width: 90%;
+            backdrop-filter: blur(5px);
         }
 
         .shoes-container {
@@ -285,11 +326,12 @@
         }
 
         .shoes-img {
-            max-width: 120px;
-            width: 40%;
+            max-width: 150px;
+            width: 45%;
             height: auto;
-            border-radius: 15px;
-            opacity: 0.9;
+            border-radius: 20px;
+            opacity: 1;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
         }
 
         /* Modal / Popups */
@@ -306,37 +348,33 @@
 
         .modal-card {
             background: #ffffff;
-            max-width: 450px;
+            max-width: 500px;
             width: 100%;
-            padding: 30px;
-            border-radius: 25px;
+            padding: 35px;
+            border-radius: 30px;
             position: relative;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+            box-shadow: 0 25px 50px rgba(0,0,0,0.4);
             text-align: center;
-            border: 4px solid var(--peach);
+            border: 5px solid var(--peach);
         }
 
         .close-btn {
             position: absolute;
-            top: 10px; left: 10px;
+            top: 15px; left: 15px;
             background: none;
             border: none;
-            font-size: 2.2rem;
+            font-size: 2.5rem;
             cursor: pointer;
             line-height: 1;
         }
 
-        .modal-card h3 {
-            margin-bottom: 15px;
-        }
-
-        .modal-card input {
+        .modal-card input, .modal-card textarea {
             width: 100%;
-            padding: 12px;
+            padding: 15px;
             margin: 15px 0;
-            font-size: 1.2rem;
+            font-size: 1.3rem;
             border: 2px solid var(--sage);
-            border-radius: 12px;
+            border-radius: 15px;
             outline: none;
         }
 
@@ -344,36 +382,36 @@
             background: var(--peach);
             color: white;
             border: none;
-            padding: 12px 35px;
-            border-radius: 15px;
-            font-size: 1.2rem;
+            padding: 15px 40px;
+            border-radius: 20px;
+            font-size: 1.4rem;
             cursor: pointer;
             width: 100%;
             margin-top: 10px;
+            font-weight: bold;
         }
 
         .ins-p {
-            font-size: 1.4rem;
+            font-size: 1.6rem;
             text-align: right;
             margin-top: 15px;
+            color: #333;
         }
 
         footer {
             text-align: center;
-            padding: 40px 0;
+            padding: 60px 0;
             color: var(--peach);
-            font-size: 1.8rem;
+            font-size: 2.2rem;
             font-weight: bold;
         }
 
-        /* Mobile specific adjustments */
         @media (max-width: 600px) {
-            #main-content { padding: 20px 15px; }
-            header { flex-direction: column; gap: 10px; }
-            .neta-img { width: 85px; height: 85px; }
-            .polaroid { width: 120px; }
-            .quest-actions { margin-right: 5px; gap: 8px; }
-            .quest-item { font-size: 1.15rem; }
+            #main-content { padding: 20px 10px; }
+            header { flex-direction: column; gap: 15px; }
+            .neta-img { width: 100px; height: 100px; }
+            .polaroid { width: 140px; }
+            .quest-item { font-size: 1.3rem; }
         }
     </style>
 </head>
@@ -409,19 +447,23 @@
                 <button class="add-btn" onclick="addQuest()">הוסיפי</button>
             </div>
             <ul class="quest-list" id="questList">
-                <!-- Items will be generated here -->
+                <!-- Items generated via JS -->
             </ul>
         </section>
 
         <!-- Section 3: Inspiration Corner -->
         <section>
             <h2 class="section-title">זוכרת ש...?</h2>
-            <div class="inspiration-grid">
-                <div class="polaroid" style="transform: rotate(-3deg);" onclick="showInspiration('trips')"><div class="polaroid-img-placeholder">✈️</div><div class="polaroid-caption">טיולים</div></div>
-                <div class="polaroid" style="transform: rotate(4deg);" onclick="showInspiration('diy')"><div class="polaroid-img-placeholder">🛠️</div><div class="polaroid-caption">בלבנות בעצמי</div></div>
-                <div class="polaroid" style="transform: rotate(-2deg);" onclick="showInspiration('initiative')"><div class="polaroid-img-placeholder">💡</div><div class="polaroid-caption">יוזמה</div></div>
-                <div class="polaroid" style="transform: rotate(5deg);" onclick="showInspiration('box')"><div class="polaroid-img-placeholder">📦</div><div class="polaroid-caption">לצאת מהקופסא</div></div>
-                <div class="polaroid" style="transform: rotate(-4deg);" onclick="showInspiration('famous')"><div class="polaroid-img-placeholder">⭐️</div><div class="polaroid-caption">הכי מפורסמת</div></div>
+            
+            <div class="add-memory-form">
+                <p style="margin-bottom: 10px; font-weight: bold;">הוסיפי זיכרון חדש:</p>
+                <input type="text" id="memTitle" placeholder="כותרת הזיכרון (למשל: טיולים)">
+                <textarea id="memContent" placeholder="מה קרה שם? (זוכרת ש...)"></textarea>
+                <button class="add-btn" style="background: var(--peach); color: white; padding: 5px 20px; border-radius: 10px;" onclick="addMemory()">הוסיפי גלויה</button>
+            </div>
+
+            <div class="inspiration-grid" id="memoryGrid">
+                <!-- Items generated via JS -->
             </div>
         </section>
 
@@ -437,7 +479,7 @@
         <footer>לנטע 2026</footer>
     </div>
 
-    <!-- Edit Modal -->
+    <!-- Quest Edit Modal -->
     <div id="edit-modal" class="modal-overlay" onclick="if(event.target==this) closeEditModal()">
         <div class="modal-card">
             <button class="close-btn" onclick="closeEditModal()">×</button>
@@ -447,7 +489,18 @@
         </div>
     </div>
 
-    <!-- Inspiration Modal -->
+    <!-- Inspiration Edit Modal -->
+    <div id="edit-memory-modal" class="modal-overlay" onclick="if(event.target==this) closeEditMemoryModal()">
+        <div class="modal-card">
+            <button class="close-btn" onclick="closeEditMemoryModal()">×</button>
+            <h3>עריכת זיכרון</h3>
+            <input type="text" id="edit-mem-title">
+            <textarea id="edit-mem-content" rows="4"></textarea>
+            <button class="save-btn" id="save-mem-btn">שמור גלויה</button>
+        </div>
+    </div>
+
+    <!-- Inspiration View Modal -->
     <div id="inspiration-overlay" class="modal-overlay" onclick="closeInspiration()">
         <div class="modal-card" onclick="event.stopPropagation()">
             <button class="close-btn" onclick="closeInspiration()">×</button>
@@ -457,9 +510,9 @@
     </div>
 
     <script>
+        // --- QUESTS LOGIC ---
         let currentEditLi = null;
-
-        const initialQuests = [
+        let initialQuests = [
             "הליכה לדאמה על הטיילת",
             "לקנות תחתונים חדשות",
             "להתלבש יפה",
@@ -469,28 +522,24 @@
             "יושבת לקרוא ספר מתח של דן בראון בשקיקה בבית קפה שכונתי"
         ];
 
-        function renderInitialQuests() {
+        function renderQuests() {
             const list = document.getElementById('questList');
             list.innerHTML = "";
-            initialQuests.forEach(text => createQuestElement(text));
-        }
-
-        function createQuestElement(text) {
-            const list = document.getElementById('questList');
-            const li = document.createElement('li');
-            li.className = 'quest-item';
-            
-            li.innerHTML = `
-                <div class="quest-content" onclick="toggleQuest(this.parentElement)">
-                    <div class="dot-check"></div>
-                    <span class="quest-text">${text}</span>
-                </div>
-                <div class="quest-actions">
-                    <button class="action-btn" onclick="openEditModal(this.parentElement.parentElement)">✍️</button>
-                    <button class="action-btn" onclick="deleteQuest(this.parentElement.parentElement)">🗑️</button>
-                </div>
-            `;
-            list.appendChild(li);
+            initialQuests.forEach((text, index) => {
+                const li = document.createElement('li');
+                li.className = 'quest-item';
+                li.innerHTML = `
+                    <div class="quest-content" onclick="toggleQuest(this.parentElement)">
+                        <div class="dot-check"></div>
+                        <span class="quest-text">${text}</span>
+                    </div>
+                    <div class="quest-actions">
+                        <button class="action-btn" onclick="openEditModal(${index})">✍️</button>
+                        <button class="action-btn" onclick="deleteQuest(${index})">🗑️</button>
+                    </div>
+                `;
+                list.appendChild(li);
+            });
         }
 
         function toggleQuest(element) {
@@ -501,52 +550,112 @@
             const input = document.getElementById('questInput');
             const text = input.value.trim();
             if (!text) return;
-            createQuestElement(text);
+            initialQuests.push(text);
             input.value = "";
-            input.focus();
+            renderQuests();
         }
 
-        function deleteQuest(li) {
-            li.style.opacity = '0';
-            li.style.transform = 'translateX(20px)';
-            setTimeout(() => li.remove(), 300);
+        function deleteQuest(index) {
+            initialQuests.splice(index, 1);
+            renderQuests();
         }
 
-        function openEditModal(li) {
-            currentEditLi = li;
-            const text = li.querySelector('.quest-text').innerText;
-            document.getElementById('edit-input').value = text;
+        let editingQuestIndex = -1;
+        function openEditModal(index) {
+            editingQuestIndex = index;
+            document.getElementById('edit-input').value = initialQuests[index];
             document.getElementById('edit-modal').style.display = 'flex';
-            document.getElementById('edit-input').focus();
         }
 
         function closeEditModal() {
             document.getElementById('edit-modal').style.display = 'none';
-            currentEditLi = null;
         }
 
         document.getElementById('save-edit-btn').onclick = function() {
-            if (currentEditLi) {
-                const newText = document.getElementById('edit-input').value.trim();
-                if (newText) {
-                    currentEditLi.querySelector('.quest-text').innerText = newText;
-                }
+            const newText = document.getElementById('edit-input').value.trim();
+            if (newText && editingQuestIndex !== -1) {
+                initialQuests[editingQuestIndex] = newText;
+                renderQuests();
                 closeEditModal();
             }
         };
 
-        const inspirationData = {
-            trips: { title: "המסעות שלך", content: "<div class='ins-p'>זוכרת שעשית את הקמינו דה סנטיאגו, את האנאפורנה ושעשית עגלות באוסטרליה?</div>" },
-            diy: { title: "בלבנות בעצמי", content: "<div class='ins-p'>זוכרת שיצרת קבוצת וואטסאפ של החלטורות של נטע והשגת מפעילות בנות 14 לקניון מודיעין?</div>" },
-            initiative: { title: "יוזמה", content: "<div class='ins-p'>זוכרת שנסעת לנתב\"ג ועזרת לאנשים למצוא מזוודות?</div>" },
-            box: { title: "לצאת מהקופסא", content: "<div class='ins-p'>זוכרת שעבדת אצל שרית והיום את בעלת הממון בבית משפחת סלע-שני?</div>" },
-            famous: { title: "הכי מפורסמת", content: "<div class='ins-p'>זוכרת שדניאל עמית העלתה אותך לאינסטגרם שלה?</div>" }
+        // --- INSPIRATION / MEMORIES LOGIC ---
+        let memories = [
+            { id: 'trips', title: "טיולים", content: "זוכרת שעשית את הקמינו דה סנטיאגו, את האנאפורנה ושעשית עגלות באוסטרליה?", emoji: "✈️" },
+            { id: 'diy', title: "בלבנות בעצמי", content: "זוכרת שיצרת קבוצת וואטסאפ של החלטורות של נטע והשגת מפעילות בנות 14 לקניון מודיעין?", emoji: "🛠️" },
+            { id: 'initiative', title: "יוזמה", content: "זוכרת שנסעת לנתב\"ג ועזרת לאנשים למצוא מזוודות?", emoji: "💡" },
+            { id: 'box', title: "לצאת מהקופסא", content: "זוכרת שעבדת אצל שרית והיום את בעלת הממון בבית משפחת סלע-שני?", emoji: "📦" },
+            { id: 'famous', title: "הכי מפורסמת", content: "זוכרת שדניאל עמית העלתה אותך לאינסטגרם שלה?", emoji: "⭐️" }
+        ];
+
+        function renderMemories() {
+            const grid = document.getElementById('memoryGrid');
+            grid.innerHTML = "";
+            memories.forEach((mem, index) => {
+                const rot = (index % 2 === 0 ? -3 : 4) + (index % 3);
+                const div = document.createElement('div');
+                div.className = 'polaroid';
+                div.style.transform = `rotate(${rot}deg)`;
+                div.innerHTML = `
+                    <div class="polaroid-controls">
+                        <button class="mini-btn" onclick="event.stopPropagation(); openEditMemoryModal(${index})">✍️</button>
+                        <button class="mini-btn" onclick="event.stopPropagation(); deleteMemory(${index})">🗑️</button>
+                    </div>
+                    <div class="polaroid-img-placeholder" onclick="showInspiration(${index})">${mem.emoji || '✨'}</div>
+                    <div class="polaroid-caption" onclick="showInspiration(${index})">${mem.title}</div>
+                `;
+                grid.appendChild(div);
+            });
+        }
+
+        function addMemory() {
+            const title = document.getElementById('memTitle').value.trim();
+            const content = document.getElementById('memContent').value.trim();
+            if (!title || !content) return;
+            memories.push({
+                id: Date.now().toString(),
+                title: title,
+                content: content,
+                emoji: "✨"
+            });
+            document.getElementById('memTitle').value = "";
+            document.getElementById('memContent').value = "";
+            renderMemories();
+        }
+
+        function deleteMemory(index) {
+            memories.splice(index, 1);
+            renderMemories();
+        }
+
+        let editingMemoryIndex = -1;
+        function openEditMemoryModal(index) {
+            editingMemoryIndex = index;
+            document.getElementById('edit-mem-title').value = memories[index].title;
+            document.getElementById('edit-mem-content').value = memories[index].content;
+            document.getElementById('edit-memory-modal').style.display = 'flex';
+        }
+
+        function closeEditMemoryModal() {
+            document.getElementById('edit-memory-modal').style.display = 'none';
+        }
+
+        document.getElementById('save-mem-btn').onclick = function() {
+            const newTitle = document.getElementById('edit-mem-title').value.trim();
+            const newContent = document.getElementById('edit-mem-content').value.trim();
+            if (newTitle && newContent && editingMemoryIndex !== -1) {
+                memories[editingMemoryIndex].title = newTitle;
+                memories[editingMemoryIndex].content = newContent;
+                renderMemories();
+                closeEditMemoryModal();
+            }
         };
 
-        function showInspiration(key) {
-            const data = inspirationData[key];
+        function showInspiration(index) {
+            const data = memories[index];
             document.getElementById('ins-title').innerText = data.title;
-            document.getElementById('ins-content').innerHTML = data.content;
+            document.getElementById('ins-content').innerHTML = `<div class='ins-p'>${data.content}</div>`;
             document.getElementById('inspiration-overlay').style.display = 'flex';
         }
 
@@ -554,19 +663,23 @@
             document.getElementById('inspiration-overlay').style.display = 'none';
         }
 
+        // Event listeners
         document.getElementById('questInput').addEventListener('keypress', (e) => {
             if (e.key === 'Enter') addQuest();
         });
 
-        // Close modals on escape key
         document.addEventListener('keydown', (e) => {
             if (e.key === 'Escape') {
                 closeEditModal();
                 closeInspiration();
+                closeEditMemoryModal();
             }
         });
 
-        window.onload = renderInitialQuests;
+        window.onload = () => {
+            renderQuests();
+            renderMemories();
+        };
     </script>
 </body>
 </html>
