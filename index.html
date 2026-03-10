@@ -27,14 +27,14 @@
         }
 
         body {
-            /* Background Image updated to sky2.png */
-            background-image: url('sky2.png');
+            /* Background Image updated to sun.png and made clear */
+            background-image: url('sun.png');
             background-size: cover;
             background-attachment: fixed;
             background-position: center center;
             background-repeat: no-repeat;
-            background-color: rgba(232, 232, 228, 0.4); 
-            background-blend-mode: lighten;
+            /* Removed blend-mode and high opacity overlay to keep the image clear */
+            background-color: #fdfcfb;
             
             color: var(--dark-text);
             font-family: 'Gveret Levin', cursive;
@@ -84,7 +84,7 @@
             font-size: clamp(2.5rem, 10vw, 4.5rem);
             color: var(--dark-text);
             margin: 0;
-            text-shadow: 1px 1px 2px rgba(255,255,255,0.8);
+            text-shadow: 1px 1px 3px rgba(255,255,255,0.9);
         }
 
         .pillars {
@@ -114,7 +114,7 @@
         /* Credits Section */
         .credits-container {
             text-align: center;
-            background: rgba(255, 255, 255, 0.6);
+            background: rgba(255, 255, 255, 0.7); /* Slightly more opaque for clarity */
             padding: 40px 20px;
             border-radius: 40px;
             margin-bottom: 60px;
@@ -140,7 +140,7 @@
 
         /* Checklist */
         .quest-section {
-            background: rgba(255, 255, 255, 0.4);
+            background: rgba(255, 255, 255, 0.5);
             padding: 30px;
             border-radius: 35px;
             backdrop-filter: blur(5px);
@@ -230,7 +230,7 @@
         .polaroid {
             background: var(--polaroid-white);
             padding: 12px 12px 35px 12px;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
             width: 170px;
             cursor: pointer;
             transition: all 0.3s ease;
@@ -275,12 +275,12 @@
         }
 
         .mini-btn {
-            background: rgba(255,255,255,0.8);
+            background: rgba(255,255,255,0.9);
             border: none;
             border-radius: 50%;
-            width: 24px;
-            height: 24px;
-            font-size: 0.8rem;
+            width: 26px;
+            height: 26px;
+            font-size: 0.9rem;
             cursor: pointer;
             display: flex;
             align-items: center;
@@ -290,21 +290,23 @@
 
         /* Add Memory Section */
         .add-memory-form {
-            background: rgba(255,255,255,0.4);
+            background: rgba(255,255,255,0.5);
             padding: 20px;
             border-radius: 20px;
             margin-bottom: 30px;
             text-align: center;
+            backdrop-filter: blur(5px);
         }
 
         .add-memory-form input, .add-memory-form textarea {
             width: 100%;
-            padding: 10px;
+            padding: 12px;
             margin-bottom: 10px;
-            border-radius: 10px;
+            border-radius: 12px;
             border: 2px solid var(--peach);
             background: white;
             outline: none;
+            font-size: 1.1rem;
         }
 
         /* Wake up message */
@@ -314,10 +316,11 @@
             color: var(--dark-text);
             margin: 60px auto;
             padding: 30px;
-            background: rgba(255, 181, 167, 0.3);
+            background: rgba(255, 181, 167, 0.35);
             border-radius: 25px;
             max-width: 90%;
             backdrop-filter: blur(5px);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
         }
 
         .shoes-container {
@@ -331,7 +334,7 @@
             height: auto;
             border-radius: 20px;
             opacity: 1;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.15);
         }
 
         /* Modal / Popups */
@@ -406,6 +409,7 @@
             font-weight: bold;
         }
 
+        /* Mobile specific adjustments */
         @media (max-width: 600px) {
             #main-content { padding: 20px 10px; }
             header { flex-direction: column; gap: 15px; }
@@ -419,8 +423,9 @@
 
     <div id="main-content">
         <header>
-            <img src="neta.png" alt="Neta" class="neta-img" onerror="this.style.display='none'">
+            <!-- Title comes first in DOM to be on the right (RTL), Image comes second to be on the left -->
             <h1>העולם על פי נטע</h1>
+            <img src="neta.png" alt="Neta" class="neta-img" onerror="this.style.display='none'">
         </header>
         
         <div class="pillars">
@@ -459,7 +464,7 @@
                 <p style="margin-bottom: 10px; font-weight: bold;">הוסיפי זיכרון חדש:</p>
                 <input type="text" id="memTitle" placeholder="כותרת הזיכרון (למשל: טיולים)">
                 <textarea id="memContent" placeholder="מה קרה שם? (זוכרת ש...)"></textarea>
-                <button class="add-btn" style="background: var(--peach); color: white; padding: 5px 20px; border-radius: 10px;" onclick="addMemory()">הוסיפי גלויה</button>
+                <button class="add-btn" style="background: var(--peach); color: white; padding: 8px 25px; border-radius: 12px;" onclick="addMemory()">הוסיפי גלויה</button>
             </div>
 
             <div class="inspiration-grid" id="memoryGrid">
