@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>העולם של נטע - 2026</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Importing Gveret Levin font -->
+    <link href="https://fonts.googleapis.com/css2?family=Gveret+Levin&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --peach: #ffb5a7;
+            --sage: #e9edc9;
+            --sunset: #fec89a;
+            --dark-text: #2d3436;
+            --polaroid-white: #ffffff;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-image: url('manifesting.png');
+            background-size: cover;
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-color: #e8e8e4;
+            background-blend-mode: overlay;
+            
+            color: var(--dark-text);
+            font-family: 'Gveret Levin', cursive;
+            line-height: 1.6;
+            overflow-x: hidden;
+            text-align: right;
+        }
+
+        h1, h2, h3, p, span, div, input, button {
+            font-family: 'Gveret Levin', cursive;
+        }
+
+        #main-content {
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 40px 20px;
+            animation: fadeIn 1.5s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        header {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 50px;
+            text-align: center;
+        }
+
+        .neta-img {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid var(--peach);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        header h1 {
+            font-size: clamp(2.5rem, 8vw, 4rem);
+            color: var(--dark-text);
+        }
+
+        .pillars {
+            font-size: 1.8rem;
+            color: var(--peach);
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-bottom: 30px;
+            width: 100%;
+        }
+
+        section {
+            margin-bottom: 80px;
+        }
+
+        .section-title {
+            font-size: 2.2rem;
+            margin-bottom: 30px;
+            color: var(--dark-text);
+            text-align: center;
+            width: 100%;
+        }
+
+        /* Credits Section */
+        .credits-container {
+            text-align: center;
+            background: rgba(255, 255, 255, 0.4);
+            padding: 40px 20px;
+            border-radius: 40px;
+            margin-bottom: 80px;
+            backdrop-filter: blur(5px);
+        }
+
+        .credit-name {
+            font-size: 1.8rem;
+            color: var(--dark-text);
+        }
+
+        /* Checklist */
+        .quest-section {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 30px;
+            border-radius: 30px;
+        }
+
+        .quest-input-wrap {
+            display: flex;
+            border-bottom: 2px solid var(--peach);
+            margin-bottom: 25px;
+        }
+
+        #questInput {
+            flex: 1;
+            background: transparent;
+            border: none;
+            padding: 10px 0;
+            font-size: 1.5rem;
+            outline: none;
+            color: var(--dark-text);
+        }
+
+        .add-btn {
+            background: transparent;
+            border: none;
+            color: var(--peach);
+            cursor: pointer;
+            padding: 0 15px;
+            font-size: 1.4rem;
+        }
+
+        .quest-list { list-style: none; }
+        .quest-item {
+            display: flex;
+            align-items: center;
+            padding: 10px 0;
+            font-size: 1.4rem;
+            transition: 0.2s;
+        }
+
+        .quest-content {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            flex: 1;
+            cursor: pointer;
+        }
+
+        .quest-item.completed .quest-content {
+            opacity: 0.4;
+            text-decoration: line-through;
+        }
+
+        .dot-check {
+            width: 18px;
+            height: 18px;
+            border: 2px solid var(--dark-text);
+            border-radius: 50%;
+            flex-shrink: 0;
+        }
+
+        .completed .dot-check {
+            background: var(--peach);
+            border-color: var(--peach);
+        }
+
+        .quest-actions {
+            display: flex;
+            gap: 10px;
+            margin-right: 15px;
+        }
+
+        .action-btn {
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-size: 1.2rem;
+            padding: 5px;
+            opacity: 0.6;
+            transition: opacity 0.2s;
+        }
+
+        .action-btn:hover {
+            opacity: 1;
+        }
+
+        /* Inspiration Corner */
+        .inspiration-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 25px;
+            padding: 20px 0;
+        }
+
+        .polaroid {
+            background: var(--polaroid-white);
+            padding: 12px 12px 35px 12px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            width: 150px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .polaroid:hover {
+            transform: scale(1.05) rotate(0deg) !important;
+            z-index: 10;
+        }
+
+        .polaroid-img-placeholder {
+            width: 100%;
+            aspect-ratio: 1/1;
+            background-color: var(--sage);
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+        }
+
+        .wake-up-msg {
+            text-align: center;
+            font-size: 1.8rem;
+            color: var(--dark-text);
+            margin: 60px auto;
+            padding: 30px;
+            background: rgba(255, 181, 167, 0.2);
+            border-radius: 20px;
+        }
+
+        .shoes-container {
+            text-align: center;
+            margin: 40px 0;
+        }
+
+        .shoes-img {
+            max-width: 150px;
+            height: auto;
+            border-radius: 15px;
+            opacity: 0.9;
+        }
+
+        /* Modal / Popups */
+        .modal-overlay {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0,0,0,0.6);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 2000;
+            padding: 20px;
+        }
+
+        .modal-card {
+            background: #ffffff;
+            max-width: 500px;
+            width: 100%;
+            padding: 40px;
+            border-radius: 30px;
+            position: relative;
+            box-shadow: 0 30px 60px rgba(0,0,0,0.4);
+            text-align: center;
+            border: 4px solid var(--peach);
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 15px; left: 15px;
+            background: none;
+            border: none;
+            font-size: 2rem;
+            cursor: pointer;
+        }
+
+        .modal-card input {
+            width: 100%;
+            padding: 10px;
+            margin: 20px 0;
+            font-size: 1.3rem;
+            border: 2px solid var(--sage);
+            border-radius: 10px;
+            outline: none;
+        }
+
+        .save-btn {
+            background: var(--peach);
+            color: white;
+            border: none;
+            padding: 10px 30px;
+            border-radius: 15px;
+            font-size: 1.2rem;
+            cursor: pointer;
+        }
+
+        footer {
+            text-align: center;
+            padding: 60px 0;
+            color: var(--peach);
+            font-size: 2rem;
+        }
+
+        @media (max-width: 600px) {
+            header { flex-direction: column; }
+            .polaroid { width: 130px; }
+        }
+    </style>
+</head>
+<body>
+
+    <div id="main-content">
+        <header>
+            <img src="neta.png" alt="Neta" class="neta-img" onerror="this.style.display='none'">
+            <h1>העולם על פי נטע</h1>
+        </header>
+        
+        <div class="pillars">
+            <span>● מלכה</span>
+            <span>● חכמה</span>
+            <span>● מצחיקה</span>
+        </div>
+
+        <!-- Section 1: Credits -->
+        <section class="credits-container">
+            <div class="credit-row"><div class="credit-role">שחקנית ראשית</div><div class="credit-name">נטע שני</div></div>
+            <div class="credit-row"><div class="credit-role">בימאית</div><div class="credit-name">נטע שני</div></div>
+            <div class="credit-row"><div class="credit-role">תסריטאית</div><div class="credit-name">נטע שני</div></div>
+            <div class="credit-row"><div class="credit-role">מחזיקת הבום</div><div class="credit-name">נטע שני</div></div>
+            <div class="credit-row"><div class="credit-role">אושיית הרשת</div><div class="credit-name">נטע שני</div></div>
+            <div class="credit-row"><div class="credit-role">מלבישה וסטיילינג</div><div class="credit-name">נטע שני</div></div>
+        </section>
+
+        <!-- Section 2: Quests -->
+        <section class="quest-section">
+            <h2 class="section-title">דברים שדמות ראשית עושה</h2>
+            <div class="quest-input-wrap">
+                <input type="text" id="questInput" placeholder="מתחשק לי גם...">
+                <button class="add-btn" onclick="addQuest()">הוסיפי</button>
+            </div>
+            <ul class="quest-list" id="questList">
+                <!-- Items will be generated here -->
+            </ul>
+        </section>
+
+        <!-- Section 3: Inspiration Corner -->
+        <section>
+            <h2 class="section-title">זוכרת ש...?</h2>
+            <div class="inspiration-grid">
+                <div class="polaroid" style="transform: rotate(-3deg);" onclick="showInspiration('trips')"><div class="polaroid-img-placeholder">✈️</div><div class="polaroid-caption">טיולים</div></div>
+                <div class="polaroid" style="transform: rotate(4deg);" onclick="showInspiration('diy')"><div class="polaroid-img-placeholder">🛠️</div><div class="polaroid-caption">בלבנות בעצמי</div></div>
+                <div class="polaroid" style="transform: rotate(-2deg);" onclick="showInspiration('initiative')"><div class="polaroid-img-placeholder">💡</div><div class="polaroid-caption">יוזמה</div></div>
+                <div class="polaroid" style="transform: rotate(5deg);" onclick="showInspiration('box')"><div class="polaroid-img-placeholder">📦</div><div class="polaroid-caption">לצאת מהקופסא</div></div>
+                <div class="polaroid" style="transform: rotate(-4deg);" onclick="showInspiration('famous')"><div class="polaroid-img-placeholder">⭐️</div><div class="polaroid-caption">הכי מפורסמת</div></div>
+            </div>
+        </section>
+
+        <div class="wake-up-msg">
+            תתעוררי על עצמך, את כבר דמות ראשית. <br>
+            זאת רק המלחמה שמשבללת אותנו.
+        </div>
+
+        <div class="shoes-container">
+            <img src="shoes.png" alt="Shoes" class="shoes-img" onerror="this.style.display='none'">
+        </div>
+
+        <footer>לנטע 2026</footer>
+    </div>
+
+    <!-- Edit Modal -->
+    <div id="edit-modal" class="modal-overlay">
+        <div class="modal-card">
+            <button class="close-btn" onclick="closeEditModal()">×</button>
+            <h3>עריכת משימה</h3>
+            <input type="text" id="edit-input">
+            <button class="save-btn" id="save-edit-btn">שמור שינויים</button>
+        </div>
+    </div>
+
+    <!-- Inspiration Modal -->
+    <div id="inspiration-overlay" class="modal-overlay" onclick="closeInspiration()">
+        <div class="modal-card" onclick="event.stopPropagation()">
+            <button class="close-btn" onclick="closeInspiration()">×</button>
+            <h3 id="ins-title"></h3>
+            <div id="ins-content"></div>
+        </div>
+    </div>
+
+    <script>
+        let currentEditLi = null;
+
+        const initialQuests = [
+            "הליכה לדאמה על הטיילת",
+            "לקנות תחתונים חדשות",
+            "להתלבש יפה",
+            "להסתפר",
+            "דייט לבד בבית קפה שקט",
+            "עובדת בלובי של מלון הילטון",
+            "יושבת לקרוא ספר מתח של דן בראון בשקיקה בבית קפה שכונתי"
+        ];
+
+        function renderInitialQuests() {
+            initialQuests.forEach(text => createQuestElement(text));
+        }
+
+        function createQuestElement(text) {
+            const list = document.getElementById('questList');
+            const li = document.createElement('li');
+            li.className = 'quest-item';
+            
+            li.innerHTML = `
+                <div class="quest-content" onclick="toggleQuest(this.parentElement)">
+                    <div class="dot-check"></div>
+                    <span class="quest-text">${text}</span>
+                </div>
+                <div class="quest-actions">
+                    <button class="action-btn" onclick="openEditModal(this.parentElement.parentElement)">✍️</button>
+                    <button class="action-btn" onclick="deleteQuest(this.parentElement.parentElement)">🗑️</button>
+                </div>
+            `;
+            list.appendChild(li);
+        }
+
+        function toggleQuest(element) {
+            element.classList.toggle('completed');
+        }
+
+        function addQuest() {
+            const input = document.getElementById('questInput');
+            const text = input.value.trim();
+            if (!text) return;
+            createQuestElement(text);
+            input.value = "";
+        }
+
+        function deleteQuest(li) {
+            li.style.opacity = '0';
+            li.style.transform = 'translateX(20px)';
+            setTimeout(() => li.remove(), 300);
+        }
+
+        function openEditModal(li) {
+            currentEditLi = li;
+            const text = li.querySelector('.quest-text').innerText;
+            document.getElementById('edit-input').value = text;
+            document.getElementById('edit-modal').style.display = 'flex';
+        }
+
+        function closeEditModal() {
+            document.getElementById('edit-modal').style.display = 'none';
+            currentEditLi = null;
+        }
+
+        document.getElementById('save-edit-btn').onclick = function() {
+            if (currentEditLi) {
+                const newText = document.getElementById('edit-input').value.trim();
+                if (newText) {
+                    currentEditLi.querySelector('.quest-text').innerText = newText;
+                }
+                closeEditModal();
+            }
+        };
+
+        const inspirationData = {
+            trips: { title: "המסעות שלך", content: "<p>זוכרת שעשית את הקמינו דה סנטיאגו, את האנאפורנה ושעשית עגלות באוסטרליה?</p>" },
+            diy: { title: "בלבנות בעצמי", content: "<p>זוכרת שיצרת קבוצת וואטסאפ של החלטורות של נטע והשגת מפעילות בנות 14 לקניון מודיעין?</p>" },
+            initiative: { title: "יוזמה", content: "<p>זוכרת שנסעת לנתב\"ג ועזרת לאנשים למצוא מזוודות?</p>" },
+            box: { title: "לצאת מהקופסא", content: "<p>זוכרת שעבדת אצל שרית והיום את בעלת הממון בבית משפחת סלע-שני?</p>" },
+            famous: { title: "הכי מפורסמת", content: "<p>זוכרת שדניאל עמית העלתה אותך לאינסטגרם שלה?</p>" }
+        };
+
+        function showInspiration(key) {
+            const data = inspirationData[key];
+            document.getElementById('ins-title').innerText = data.title;
+            document.getElementById('ins-content').innerHTML = data.content;
+            document.getElementById('inspiration-overlay').style.display = 'flex';
+        }
+
+        function closeInspiration() {
+            document.getElementById('inspiration-overlay').style.display = 'none';
+        }
+
+        document.getElementById('questInput').addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') addQuest();
+        });
+
+        window.onload = renderInitialQuests;
+    </script>
+</body>
+</html>
